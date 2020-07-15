@@ -1,5 +1,5 @@
 loops:
-	g++ loops.cc -g3 -o loops
+	g++ loops.cpp -g3 -o loops
 
 clean:
 	rm -rf loops

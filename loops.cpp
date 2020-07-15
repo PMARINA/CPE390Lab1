@@ -6,7 +6,7 @@ uint32_t sumOneTo(uint32_t n);
 
 uint32_t factorial(uint32_t n);
 
-uint32_t slowFactorial(uint32_t n);  // No using the * or *= instruction
+uint32_t slowFactorial(uint32_t n);  // No using the * or *= instruction.
 
 /*
 printCheckerboard(5)
@@ -62,8 +62,8 @@ int main() {
        << " expected 2 3 5 7 11 13 17 19 23 29 = 10?" << endl;
 
   uint32_t lenX = 10;
-  uint32_t* x = new int[lenX];
-  uint32_t* y = new int[lenX];
+  uint32_t* x = new uint32_t[lenX];
+  uint32_t* y = new uint32_t[lenX];
   uint32_t sum = 0;  // for answer checking use ONLY
   uint32_t dot = 0;  // for answer checking use ONLY
   for (uint32_t i = 0; i < lenX; i++) {
@@ -72,11 +72,14 @@ int main() {
     y[i] = i;
     dot += x[i] * y[i];
   }
-  printArray(x);
+  printArray(x, lenX);
 
   uint32_t sumComputed = sumArray(x, lenX);
   cout << "Answer to 8: " << sumComputed << " expected " << sum << endl;
 
-  uint32_t answerTo9 = dotProduct(x, y);
+  uint32_t answerTo9 = dotProduct(x, y, lenX);
   cout << "Answer to 9: " << answerTo9 << " expected: " << dot << endl;
+
+  delete[] x;
+  delete[] y;
 }
